@@ -15,13 +15,13 @@ build:
   script:
     - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem
       && gem unpack {{ name }}-{{ version }}.gem
-  skip: {{ win }} or {{rb25}}
+  skip: {{ win }}
 
 requirements:
   host:
-    - ruby
+    - ruby  >=2.5
   run:
-    - ruby
+    - ruby >=2.5
     - rb-cool.io >=1.4.5,<2.0.0
     - rb-dig_rb >=1.0.0,<1.1
     - rb-http_parser.rb >=0.5.1,<0.7.0
