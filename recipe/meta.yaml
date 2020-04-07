@@ -14,8 +14,8 @@ build:
   number: 0
   script:
     - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem
-      && gem unpack {{ name }}-{{ version }}.gem  # [rb26]
-  skip: {{ win }}
+      && gem unpack {{ name }}-{{ version }}.gem
+  skip: {{ win }} or {{rb25}}
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   home: https://rubygems.org/gems/{{ name }}
   license: Apache-2.0
   license_family: APACHE
-  license_file: LICENSE.txt
+  license_file: {{ name }}-{{ version }}/LICENSE.txt
   summary: |
     Fluentd is an open source data collector designed to scale and simplify
     log management. It can collect, process and ship many kinds of data
