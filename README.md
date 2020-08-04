@@ -5,7 +5,7 @@ Home: https://rubygems.org/gems/fluentd
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Fluentd is an open source data collector designed to scale and simplify
 log management. It can collect, process and ship many kinds of data
