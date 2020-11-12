@@ -1,5 +1,5 @@
 {% set name = "fluentd" %}
-{% set version = "1.11.3" %}
+{% set version = "1.11.5" %}
 
 package:
   name: rb-{{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem
-  sha256: d529546efe460ec7d496ad91e324f93303c964e677f7b641c746918cc2c56259
+  sha256: 902a4c7d86ca94df8b5d8a5772c51f5088da306fe37b7b4087c29536328983ed
 
 build:
   noarch: generic
