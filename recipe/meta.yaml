@@ -1,5 +1,5 @@
 {% set name = "fluentd" %}
-{% set version = "1.11.3" %}
+{% set version = "1.14.1" %}
 
 package:
   name: rb-{{ name|lower }}
@@ -7,13 +7,14 @@ package:
 
 source:
   url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem
-  sha256: d529546efe460ec7d496ad91e324f93303c964e677f7b641c746918cc2c56259
+  sha256: a34a4f10e3237de5071aec281e35706db5b0b4ca6eac1ca415a1ba66b13fc469 
 
 build:
   noarch: generic
   number: 0
   script:
-    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem && gem unpack {{ name }}-{{ version }}.gem
+    - gem install -N -l -V --norc --ignore-dependencies -n $PREFIX/bin {{ name }}-{{ version }}.gem
+    - gem unpack {{ name }}-{{ version }}.gem
   skip: {{ win }}
 
 requirements:
@@ -21,16 +22,17 @@ requirements:
     - ruby  >=2.5
   run:
     - ruby >=2.5
+    - rb-bundler >=0
     - rb-cool.io >=1.4.5,<2.0.0
-    - rb-dig_rb >=1.0.0,<1.1
     - rb-http_parser.rb >=0.5.1,<0.7.0
-    - rb-msgpack >=1.2.0,<2.0.0
-    - rb-serverengine >=2.0.4,<3.0.0
-    - rb-sigdump >=0.2.2,<1.0.0
-    - rb-strptime >=0.2.2,<0.3
-    - rb-tzinfo >=2.0,<3
-    - rb-tzinfo-data >=1.0,<2
-    - rb-yajl-ruby >=1.0,<2
+    - rb-msgpack >=1.3.1,<2.0.0
+    - rb-serverengine >=2.2.2,<3.0.0
+    - rb-sigdump >=0.2.2
+    - rb-strptime >=0.2.2,<1.0.0
+    - rb-tzinfo >=1.0,<3.0
+    - rb-tzinfo-data >=1.0
+    - rb-webrick >=1.4.2,<1.8.0 
+    - rb-yajl-ruby >=1.0
 
 test:
   commands:
@@ -50,6 +52,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - oblute
-    - benhuff
+    - mxr-conda
     - conda-forge/ruby
