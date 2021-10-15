@@ -19,9 +19,9 @@ build:
 
 requirements:
   host:
-    - ruby  >=2.5
+    - ruby >=2.5
   run:
-    - {{ pin_compatible('ruby', max_pin='x.x') }}
+    - ruby >=2.5
     - rb-bundler >=0
     - rb-cool.io >=1.4.5,<2.0.0
     - rb-http_parser.rb >=0.5.1,<0.7.0
